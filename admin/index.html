@@ -1,9 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url=products.html">
-    <script>window.location.href='products.html';</script>
+    <title>Admin Login - Zero Defect Export</title>
+    <link rel="stylesheet" href="admin.css">
 </head>
-<body></body>
+<body>
+    <div class="login-container">
+        <h2>Admin Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script src="supabase.js"></script>
+    <script src="admin-utils.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple auth (matches your system)
+            if (username === 'admin' && password.length > 3) {
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                sessionStorage.setItem('adminUsername', username);
+                window.location.href = 'products.html';
+            } else {
+                alert('Invalid credentials');
+            }
+        });
+    </script>
+</body>
 </html>
-
