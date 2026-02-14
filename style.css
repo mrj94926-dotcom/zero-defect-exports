@@ -1113,12 +1113,12 @@ textarea.form-control {
     width: 150px;
 }
 
-/* .product-price {
+.product-price {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--color-earth);
     margin-bottom: var(--spacing-md);
-} */
+}
 
 .reviews-grid {
     display: grid;
