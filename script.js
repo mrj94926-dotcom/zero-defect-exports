@@ -319,10 +319,10 @@ function renderPagedProducts() {
             </div>
             <h3>${p.name}</h3>
             <p class="product-subtitle">${p.subtitle}</p>
-            // <p class="product-price">₹${p.price}/kg</p>
-            // <p class="product-stock" style="font-size: 0.85rem; color: ${p.stock > 0 ? '#2E7D32' : '#e74c3c'}; margin-bottom: 10px;">
-            //     ${p.stock > 0 ? `<i class="fas fa-check-circle"></i> In Stock: ${p.stock} kg` : '<i class="fas fa-times-circle"></i> Out of Stock'}
-            // </p>
+            <p class="product-price">₹${p.price}/kg</p>
+            <p class="product-stock" style="font-size: 0.85rem; color: ${p.stock > 0 ? '#2E7D32' : '#e74c3c'}; margin-bottom: 10px;">
+                ${p.stock > 0 ? `<i class="fas fa-check-circle"></i> In Stock: ${p.stock} kg` : '<i class="fas fa-times-circle"></i> Out of Stock'}
+            </p>
             <button class="btn btn--secondary" onclick="addToCart('${p.name}', ${p.price})" ${p.stock <= 0 ? 'disabled style="opacity: 0.6; cursor: not-allowed;"' : ''}>${p.stock > 0 ? 'Add to Cart' : 'Out of Stock'}</button>
         </div>
     `}).join('');
